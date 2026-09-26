@@ -1,0 +1,1271 @@
+/* =====================================================
+   DASAR
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f8f8;
+    color: #17201f;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================================================
+   WARNA IDENTITAS POWERPOINT
+===================================================== */
+
+:root {
+    --orange: #e6531c;
+    --orange-dark: #c94012;
+    --orange-light: #fff0e9;
+
+    --dark: #09100f;
+    --dark-2: #111817;
+
+    --green-dark: #073d31;
+
+    --text: #17201f;
+    --muted: #6d7775;
+
+    --border: #e2e6e5;
+
+    --white: #ffffff;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    height: 58px;
+    background: #09100f;
+    display: flex;
+    align-items: center;
+
+    padding: 0 5%;
+
+    color: white;
+
+    position: relative;
+    z-index: 100;
+
+    border-bottom: 1px solid #202927;
+}
+
+
+/* LOGO */
+
+.logo {
+    width: 145px;
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+
+    color: white;
+
+    font-size: 25px;
+    font-weight: 800;
+
+    line-height: 20px;
+}
+
+.logo strong {
+    letter-spacing: -2px;
+}
+
+.logo span {
+    font-size: 8px;
+
+    background: white;
+    color: #09100f;
+
+    border-radius: 2px;
+
+    padding: 2px 3px;
+
+    margin-left: 4px;
+}
+
+.logo small {
+    position: absolute;
+
+    left: 3px;
+    top: 21px;
+
+    font-size: 6px;
+    letter-spacing: 3px;
+
+    font-weight: 500;
+}
+
+
+/* MENU */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 34px;
+
+    height: 100%;
+}
+
+.nav-menu a {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    font-size: 12px;
+
+    color: #f5f5f5;
+
+    transition: color 0.25s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--orange);
+}
+
+.nav-menu a.active {
+    color: var(--orange);
+}
+
+.nav-menu a.active::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 2px;
+
+    background: var(--orange);
+}
+
+
+/* TOOLS */
+
+.nav-tools {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.search-box {
+    width: 150px;
+    height: 31px;
+
+    border-radius: 20px;
+
+    background: #17211f;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 12px;
+
+    color: #b7bfbd;
+
+    font-size: 11px;
+}
+
+.search-box:hover {
+    background: #202b28;
+}
+
+.settings-btn {
+    width: 31px;
+    height: 31px;
+
+    border-radius: 50%;
+
+    background: #17211f;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.25s;
+}
+
+.settings-btn:hover {
+    background: var(--orange);
+    transform: rotate(25deg);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    height: 265px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: white;
+
+    background: #101514;
+}
+
+
+/* GAMBAR HERO */
+
+.hero-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+/* OVERLAY */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 12, 11, 0.98) 0%,
+            rgba(7, 12, 11, 0.91) 36%,
+            rgba(7, 12, 11, 0.48) 55%,
+            rgba(7, 12, 11, 0.05) 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* ORANGE DIAGONAL */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 12px;
+    height: 430px;
+
+    left: 42%;
+
+    top: -80px;
+
+    background: var(--orange);
+
+    transform: rotate(30deg);
+
+    opacity: 0.9;
+
+    z-index: 2;
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    position: relative;
+
+    z-index: 3;
+
+    width: 90%;
+    max-width: 1120px;
+
+    margin: auto;
+
+    padding-top: 30px;
+}
+
+
+/* TITLE */
+
+.hero-title {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+.powerpoint-icon {
+    width: 66px;
+    height: 66px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff8a45,
+            #d53613
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 37px;
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 25px rgba(230, 83, 28, 0.25);
+}
+
+.hero h1 {
+    font-size: 42px;
+
+    letter-spacing: -1px;
+
+    font-weight: 800;
+}
+
+.hero h2 {
+    font-size: 21px;
+
+    margin-top: 9px;
+
+    font-weight: 700;
+}
+
+.hero-content > p {
+    width: 480px;
+
+    margin-top: 10px;
+
+    color: #d4d9d7;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* FEATURES */
+
+.hero-features {
+    display: flex;
+
+    gap: 30px;
+
+    margin-top: 18px;
+}
+
+.hero-feature {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.hero-feature span {
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(230, 83, 28, 0.2);
+
+    border: 1px solid rgba(230, 83, 28, 0.5);
+
+    color: #ff7a40;
+
+    border-radius: 6px;
+
+    font-size: 11px;
+}
+
+.hero-feature p {
+    font-size: 10px;
+
+    color: #e7e9e8;
+}
+
+
+/* =====================================================
+   PILIH TINGKATAN
+===================================================== */
+
+.levels-section {
+    width: 90%;
+    max-width: 1120px;
+
+    margin: 0 auto;
+
+    padding: 28px 0 25px;
+}
+
+
+/* TOP */
+
+.section-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 17px;
+}
+
+.section-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+.section-icon {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 9px;
+
+    background: var(--orange);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+.section-title h2 {
+    font-size: 21px;
+
+    margin-bottom: 3px;
+}
+
+.section-title p {
+    font-size: 10px;
+
+    color: var(--muted);
+}
+
+.section-link {
+    color: var(--orange);
+
+    font-size: 9px;
+}
+
+
+/* LEVEL GRID */
+
+.levels-grid {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 14px;
+}
+
+
+/* LEVEL CARD */
+
+.level-card {
+    min-height: 130px;
+
+    background: white;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 9px;
+
+    padding: 15px;
+
+    position: relative;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.level-card:hover {
+    transform:
+        translateY(-7px)
+        scale(1.035);
+
+    border-color: rgba(230, 83, 28, 0.45);
+
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.10);
+}
+
+.level-icon {
+    width: 39px;
+    height: 39px;
+
+    border-radius: 50%;
+
+    background: var(--orange);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+}
+
+.level-arrow {
+    position: absolute;
+
+    top: 20px;
+    right: 17px;
+
+    color: var(--orange);
+
+    font-size: 19px;
+
+    transition: transform 0.3s ease;
+}
+
+.level-card:hover .level-arrow {
+    transform: translateX(5px);
+}
+
+.level-card h3 {
+    margin-top: 10px;
+
+    font-size: 15px;
+}
+
+.level-card p {
+    margin-top: 7px;
+
+    font-size: 9px;
+
+    color: var(--muted);
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   AREA KOLEKSI
+===================================================== */
+
+.collection-area {
+    width: 90%;
+    max-width: 1120px;
+
+    margin: auto;
+
+    padding-bottom: 35px;
+}
+
+
+/* =====================================================
+   COLLECTION SECTION
+===================================================== */
+
+.collection-section {
+    background: #ffffff;
+
+    border: 1px solid #e4e7e6;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+    padding: 13px;
+
+    scroll-margin-top: 75px;
+}
+
+
+/* HEADER */
+
+.collection-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 2px 13px;
+}
+
+.collection-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+.collection-icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 9px;
+
+    background: var(--orange);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+.title-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.title-row h2 {
+    font-size: 17px;
+}
+
+.collection-title p {
+    font-size: 9px;
+
+    color: var(--muted);
+
+    margin-top: 4px;
+}
+
+.material-count {
+    background: #ffebe2;
+
+    color: var(--orange);
+
+    padding: 4px 9px;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+}
+
+.see-all {
+    color: var(--orange);
+
+    font-size: 9px;
+}
+
+.see-all:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   PRESENTATION GRID
+===================================================== */
+
+.presentation-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+
+/* =====================================================
+   PRESENTATION CARD
+===================================================== */
+
+.presentation-card {
+    background: white;
+
+    border: 1px solid #e7e9e8;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    transition:
+        transform 0.3s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* EFFECT SAAT MOUSE MENDEKAT */
+
+.presentation-card:hover {
+    transform:
+        translateY(-8px)
+        scale(1.045);
+
+    border-color:
+        rgba(230, 83, 28, 0.45);
+
+    box-shadow:
+        0 18px 35px rgba(0, 0, 0, 0.13);
+
+    z-index: 5;
+}
+
+
+/* GAMBAR CARD */
+
+.presentation-image {
+    height: 115px;
+
+    background: #f0f2f1;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.presentation-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.4s ease;
+}
+
+.presentation-card:hover .presentation-image img {
+    transform: scale(1.06);
+}
+
+
+/* POWERPOINT BADGE */
+
+.ppt-badge {
+    position: absolute;
+
+    left: 8px;
+    bottom: 7px;
+
+    width: 23px;
+    height: 23px;
+
+    border-radius: 6px;
+
+    background: var(--orange);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* CARD CONTENT */
+
+.card-content {
+    padding: 10px;
+
+    min-height: 102px;
+
+    position: relative;
+}
+
+.card-content h3 {
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    padding-right: 20px;
+
+    min-height: 31px;
+}
+
+.card-info {
+    color: #79817f;
+
+    font-size: 8px;
+
+    margin-top: 5px;
+}
+
+
+/* SUBJECT TAG */
+
+.subject-tag {
+    display: inline-block;
+
+    padding: 4px 8px;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+
+    margin-top: 9px;
+}
+
+.subject-tag.nahwu {
+    background: #fff0e9;
+    color: var(--orange);
+}
+
+.subject-tag.shorof {
+    background: #fff0e9;
+    color: #c9572b;
+}
+
+.subject-tag.fiqih {
+    background: #eaf4ff;
+    color: #3880bd;
+}
+
+.subject-tag.akhlak {
+    background: #fff3e4;
+    color: #b56a22;
+}
+
+.subject-tag.tauhid {
+    background: #e9f5ef;
+    color: #2f8563;
+}
+
+
+/* CARD ARROW */
+
+.card-arrow {
+    position: absolute;
+
+    right: 10px;
+    bottom: 10px;
+
+    width: 23px;
+    height: 23px;
+
+    border-radius: 50%;
+
+    background: var(--orange);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.presentation-card:hover .card-arrow {
+    transform: translateX(4px);
+
+    background: var(--orange-dark);
+}
+
+
+/* =====================================================
+   SECTION KOSONG
+===================================================== */
+
+.empty-section {
+    min-height: 180px;
+
+    background: white;
+
+    border: 1px solid #e5e7e6;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+    padding: 30px;
+
+    scroll-margin-top: 75px;
+}
+
+.empty-section h2 {
+    font-size: 18px;
+
+    color: var(--orange);
+}
+
+.empty-section p {
+    margin-top: 8px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    background: #09100f;
+
+    color: white;
+}
+
+
+/* FOOTER MAIN */
+
+.footer-main {
+    min-height: 100px;
+
+    width: 90%;
+    max-width: 1120px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        2fr
+        1fr;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+/* FOOTER BRAND */
+
+.footer-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.footer-logo {
+    font-size: 25px;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    position: relative;
+}
+
+.footer-logo span {
+    font-size: 7px;
+
+    background: white;
+
+    color: #09100f;
+
+    padding: 2px 3px;
+
+    border-radius: 2px;
+
+    vertical-align: top;
+
+    letter-spacing: 0;
+}
+
+.footer-brand p {
+    font-size: 8px;
+
+    line-height: 1.5;
+
+    color: #adb6b3;
+}
+
+
+/* FOOTER NAV */
+
+.footer-navigation {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+}
+
+.footer-navigation a {
+    font-size: 9px;
+
+    color: #c7cdcb;
+
+    transition: color 0.2s ease;
+}
+
+.footer-navigation a:hover {
+    color: var(--orange);
+}
+
+.footer-navigation .footer-active {
+    color: var(--orange);
+}
+
+
+/* SOCIAL */
+
+.footer-social {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 15px;
+}
+
+.footer-social a {
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.footer-social a:hover {
+    background: var(--orange);
+
+    transform:
+        translateY(-3px)
+        scale(1.1);
+}
+
+
+/* FOOTER BOTTOM */
+
+.footer-bottom {
+    height: 34px;
+
+    border-top: 1px solid #222b29;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #777f7d;
+
+    font-size: 8px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .nav-menu {
+        gap: 18px;
+    }
+
+    .logo {
+        width: 105px;
+    }
+
+    .presentation-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .levels-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 760px) {
+
+    .navbar {
+        height: auto;
+
+        min-height: 60px;
+
+        flex-wrap: wrap;
+
+        padding: 10px 5%;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .nav-menu {
+        order: 3;
+
+        width: 100%;
+
+        overflow-x: auto;
+
+        gap: 20px;
+
+        height: 42px;
+    }
+
+    .nav-tools {
+        margin-left: auto;
+    }
+
+    .search-box {
+        width: 120px;
+    }
+
+
+    .hero {
+        height: 350px;
+    }
+
+    .hero-content {
+        padding-top: 35px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero h2 {
+        font-size: 17px;
+    }
+
+    .hero-content > p {
+        width: 80%;
+
+        font-size: 11px;
+    }
+
+    .hero::after {
+        left: 80%;
+    }
+
+
+    .levels-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .presentation-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .footer-main {
+        grid-template-columns: 1fr;
+
+        padding: 25px 0;
+
+        text-align: center;
+    }
+
+    .footer-brand {
+        justify-content: center;
+    }
+
+    .footer-navigation {
+        flex-wrap: wrap;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .levels-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .presentation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-top {
+        display: block;
+    }
+
+    .section-link {
+        display: block;
+
+        margin-top: 10px;
+    }
+
+    .collection-header {
+        display: block;
+    }
+
+    .see-all {
+        display: inline-block;
+
+        margin-top: 10px;
+    }
+
+    .hero-features {
+        gap: 10px;
+    }
+
+}
